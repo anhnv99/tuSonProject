@@ -69,8 +69,8 @@ productSchema.plugin(paginate);
  * @returns {Promise<boolean>}
  */
 productSchema.statics.isProductCodeTaken = async function (productCode, excludeProductId) {
-  const user = await this.findOne({ productCode, _id: { $ne: excludeProductId } });
-  return !!user;
+  const product = await this.findOne({ productCode, _id: { $ne: excludeProductId } });
+  return !!product;
 };
 /**
  * @typedef Product
